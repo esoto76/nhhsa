@@ -1,0 +1,7 @@
+html {
+  @apply font-main text-16-px h-full bg-secondary-light;
+}
+
+body {
+  @apply overflow-x-hidden min-h-screen;
+}
