@@ -28,18 +28,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#f7e624",
-          dark: "#383408",
-          med: "#786F12",
-          light: "#f7e624",
-        },
-        secondary: {
-          DEFAULT: "#18181b",
-          dark: "#18181b",
-          med: "#71717a",
-          light: "#fafafa",
-        },
+        primary: "#152f0b",
+        secondary: "#f7e624",
+        dark: "#27262c",
+        light: "#f0edee",
+        error: "#d52941",
       },
       spacing: {
         "0-px": "0px",
