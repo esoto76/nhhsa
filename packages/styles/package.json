@@ -1,9 +1,10 @@
 {
   "name": "@nhhsa/styles",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-rc.1",
   "description": "NHHSA - Tailwind css preset and styles",
   "author": "Eric Sotomayor <elpasocolorartist@gmail.com>",
   "license": "ISC",
+  "main": "index,js",
   "scripts": {
     "build": "tailwindcss -i ./index.css -o ./dist/styles.css"
   },
