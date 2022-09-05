@@ -1,7 +1,11 @@
 html {
-  @apply font-main text-16-px h-full bg-secondary-light;
+  @apply font-main text-16-px h-full bg-light text-dark;
 }
 
 body {
-  @apply overflow-x-hidden min-h-screen;
+  @apply overflow-x-hidden min-h-screen min-w-sm;
+}
+
+#app {
+  @apply overflow-hidden relative bg-light min-h-screen min-w-sm block;
 }
