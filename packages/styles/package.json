@@ -4,7 +4,12 @@
   "description": "NHHSA - Tailwind css preset and styles",
   "author": "Eric Sotomayor <elpasocolorartist@gmail.com>",
   "license": "ISC",
-  "main": "index,js",
+  "main": "./index.js",
+  "files": [
+    "./index.js",
+    "./base.css",
+    "*.css"
+  ],
   "scripts": {
     "build": "tailwindcss -i ./index.css -o ./dist/styles.css"
   },
