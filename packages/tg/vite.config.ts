@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url';
 import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
 import Pages from 'vite-plugin-pages';
 
 import { defineConfig } from 'vite';
@@ -19,7 +20,8 @@ export default defineConfig({
         filepath: './.eslintrc-auto-import.json',
         globalsPropValue: true
       }
-    })
+    }),
+    Components({ dts: 'src/components.d.ts' })
   ],
   resolve: {
     alias: {

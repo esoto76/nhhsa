@@ -2,5 +2,6 @@
 
 <template>
   <h1>NHHSA - Transcript Generator</h1>
+  <Navbox />
   <router-view></router-view>
 </template>
