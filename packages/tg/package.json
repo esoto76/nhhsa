@@ -12,7 +12,7 @@
     "start": "vite --open"
   },
   "dependencies": {
-    "pinia": "^2.0.21",
+    "pinia": "^2.0.22",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },
@@ -38,7 +38,7 @@
     "unplugin-vue-components": "^0.22.4",
     "vite": "^3.1.0",
     "vite-plugin-pages": "^0.26.0",
-    "vue-tsc": "^0.40.7"
+    "vue-tsc": "^0.40.9"
   },
   "repository": {
     "type": "git",
