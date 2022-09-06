@@ -1,6 +1,6 @@
 {
   "name": "@nhhsa/transcript-generator",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "NHHSA transcript generator",
   "scripts": {
     "dev": "vite",
