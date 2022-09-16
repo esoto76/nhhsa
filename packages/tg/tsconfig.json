@@ -1,8 +1,15 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "electron",
+    "vite.config.ts"
+  ],
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["vite-plugin-electron/electron-env", "node"],
     "paths": {
       "@/*": ["./src/*"]
     }

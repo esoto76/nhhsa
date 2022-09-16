@@ -1,7 +1,9 @@
 import { fileURLToPath, URL } from 'node:url';
+import { join } from 'node:path';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import Pages from 'vite-plugin-pages';
+import Electron from 'vite-plugin-electron';
 
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -21,7 +23,21 @@ export default defineConfig({
         globalsPropValue: true
       }
     }),
-    Components({ dts: 'src/components.d.ts' })
+    Components({ dts: 'src/components.d.ts' }),
+    Electron({
+      main: {
+        entry: 'electron/main.ts'
+      },
+      preload: {
+        input: {
+          // Must be use absolute path, this is the restrict of Rollup
+          preload: join(__dirname, 'electron/preload.ts')
+        }
+      },
+      // Enables use of Node.js API in the Renderer-process
+      // https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron-renderer#electron-renderervite-serve
+      renderer: {}
+    })
   ],
   resolve: {
     alias: {
