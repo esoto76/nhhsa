@@ -1,0 +1,39 @@
+.navbox {
+  @apply w-full overflow-hidden block min-w-sm fixed z-900k shadow;
+}
+
+.navbar {
+  @apply w-full overflow-hidden bg-light h-64-px min-w-sm justify-center items-center content-center flex;
+}
+
+.navbar-bx {
+  @apply overflow-hidden grow justify-center content-center items-center h-full flex flex-col;
+
+  &.is-logo,
+  &.is-close {
+    @apply w-64-px max-w-64-px  p-4-px;
+  }
+
+  &.is-tile {
+    @apply flex-row justify-start pl-8-px text-24-px font-alt select-none;
+
+    h1 {
+      @apply uppercase pr-4-px font-black text-primary leading-none;
+    }
+    h2 {
+      @apply capitalize font-light text-gray-700 leading-none;
+    }
+  }
+}
+
+.navbar-btn {
+  @apply w-full h-full overflow-hidden items-center content-center justify-center flex flex-col;
+
+  .material-icons {
+    @apply text-24-px text-gray-400;
+  }
+}
+
+.content-bx {
+  @apply w-full pt-72-px px-8-px h-screen overflow-x-hidden overflow-y-auto min-w-sm block shadow-inner;
+}
