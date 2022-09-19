@@ -1,7 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>NHHSA - Transcript Generator</h1>
   <Navbox />
-  <router-view></router-view>
+  <div class="content-bx">
+    <router-view></router-view>
+  </div>
 </template>
