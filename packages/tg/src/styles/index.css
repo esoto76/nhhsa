@@ -2,5 +2,6 @@
 @import '@nhhsa/styles/base';
 
 @import 'tailwindcss/components';
+@import '@nhhsa/styles/components';
 
 @import 'tailwindcss/utilities';
