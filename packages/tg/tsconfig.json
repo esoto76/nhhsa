@@ -9,6 +9,7 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "noImplicitAny": false,
     "types": ["vite-plugin-electron/electron-env", "node"],
     "paths": {
       "@/*": ["./src/*"]
