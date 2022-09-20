@@ -88,7 +88,7 @@ export function GetDisciplineRow(
 export function GetDisciplineRows(
   sheet: { [key: string]: any },
   start: number
-) {
+): DisciplineRowsObj[] {
   const rows: DisciplineRowsObj[] = [];
   const end = start + DIsciplineRange;
 
@@ -128,10 +128,29 @@ export function GetDisciplines(sheet: { [key: string]: any }): {
   return disciplines;
 }
 
+function getCommunityServiceRows(
+  sheet: { [key: string]: any },
+  start: number
+): DisciplineRowsObj[] {
+  const rows: DisciplineRowsObj[] = [];
+  const end = start + DIsciplineRange;
+
+  for (let i = 0 + start; i < end; i++) {
+    const row = GetDisciplineRow(sheet, i);
+    rows.push(row);
+  }
+
+  return rows.filter(r => r.final && typeof r.final !== 'string');
+}
+
 export function ParseSheet(sheet: { [key: string]: any }): SheetObj {
   const header = GetHeader(sheet);
 
   const disciplines = GetDisciplines(sheet);
+  disciplines.Community_Service_Total_Hours = {
+    title: 'Community Service Total Hours',
+    vals: getCommunityServiceRows(sheet, 128)
+  };
 
   return { header, disciplines };
 }
