@@ -6,7 +6,7 @@
       <div class="navbar-bx is-logo"><Logo /></div>
       <div class="navbar-bx is-tile">
         <h1>nhhsa</h1>
-        <h2>- transcipt generator</h2>
+        <h2>- transcipt generator __VERSION__</h2>
       </div>
       <div class="navbar-bx is-close">
         <button class="navbar-btn">

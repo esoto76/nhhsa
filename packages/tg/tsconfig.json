@@ -5,9 +5,11 @@
     "src/**/*",
     "src/**/*.vue",
     "electron",
-    "vite.config.ts"
+    "vite.config.ts",
+    "package.json"
   ],
   "compilerOptions": {
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "noImplicitAny": false,
     "types": ["vite-plugin-electron/electron-env", "node"],
