@@ -21,6 +21,8 @@ export const DisciplineRows: string[] = [
 export interface SheetObj {
   header: CellValObj[];
   disciplines: { [key: string]: { title: string; vals: DisciplineRowsObj[] } };
+  Total_Credits: number | string;
+  Total_Service_Hours: number | string;
 }
 
 export const HeaderKeys: string[] = [
@@ -152,5 +154,8 @@ export function ParseSheet(sheet: { [key: string]: any }): SheetObj {
     vals: getCommunityServiceRows(sheet, 128)
   };
 
-  return { header, disciplines };
+  const Total_Credits: number | string = getCell(sheet.F138);
+  const Total_Service_Hours: number | string = getCell(sheet.F139);
+
+  return { header, disciplines, Total_Credits, Total_Service_Hours };
 }
