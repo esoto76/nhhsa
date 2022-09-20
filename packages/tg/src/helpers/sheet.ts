@@ -1,7 +1,26 @@
 export type CellValObj = { title: string; val: any };
 
+export interface DisciplineRowsObj {
+  year: string;
+  discipline: string;
+  sem_1: string;
+  sem_2: string;
+  final: string;
+  credit: string;
+}
+
+export const DisciplineRows: string[] = [
+  'year:A',
+  'discipline:B',
+  'sem_1:C',
+  'sem_2:D',
+  'final:E',
+  'credit:F'
+];
+
 export interface SheetObj {
   header: CellValObj[];
+  disciplines: { [key: string]: { title: string; vals: DisciplineRowsObj[] } };
 }
 
 export const HeaderKeys: string[] = [
@@ -12,6 +31,21 @@ export const HeaderKeys: string[] = [
   'C2:D2',
   'E2:F2'
 ];
+
+const DisciplinesHeaders: string[] = [
+  'B6',
+  'B17',
+  'B28',
+  'B39',
+  'B50',
+  'B61',
+  'B72',
+  'B83',
+  'B95',
+  'B106'
+];
+
+const DIsciplineRange = 10;
 
 const AddressKeys: string[] = ['street:B3', 'city:C3', 'state:D3', 'zip:E3'];
 
@@ -33,12 +67,71 @@ export function GetHeader(obj: { [key: string]: any }): CellValObj[] {
     const kk = k.split(':');
     vals.push({ title: kk[0], val: getCell(obj[kk[1]]) });
   }
-  console.dir(vals);
   return vals;
+}
+
+export function GetDisciplineRow(
+  sheet: {
+    [key: string]: any;
+  },
+  row: number
+): DisciplineRowsObj {
+  const Row = {};
+
+  for (const k of DisciplineRows) {
+    const [title, col] = k.split(':');
+    Row[title] = getCell(sheet[col + row]);
+  }
+  return Row as DisciplineRowsObj;
+}
+
+export function GetDisciplineRows(
+  sheet: { [key: string]: any },
+  start: number
+) {
+  const rows: DisciplineRowsObj[] = [];
+  const end = start + DIsciplineRange;
+
+  for (let i = 0 + start; i < end; i++) {
+    const row = GetDisciplineRow(sheet, i);
+    rows.push(row);
+  }
+
+  return rows.filter(r => r.credit && typeof r.credit !== 'string');
+}
+
+export function GetDisciplines(sheet: { [key: string]: any }): {
+  [key: string]: any;
+} {
+  const disciplines = {};
+  const disciplineKeys: string[] = [];
+
+  for (const k of DisciplinesHeaders) {
+    const title = getCell(sheet[k]).split(':')[0];
+    const key = title.replace(/ /g, '_');
+    const vals = [];
+    disciplineKeys.push(k);
+    disciplines[key] = { title, vals };
+  }
+
+  let i = 0;
+
+  for (const k in disciplines) {
+    const row = GetDisciplineRows(
+      sheet,
+      Number(disciplineKeys[i].replace(/\D/g, '')) + 1
+    );
+    disciplines[k].vals = row;
+    i++;
+  }
+
+  return disciplines;
 }
 
 export function ParseSheet(sheet: { [key: string]: any }): SheetObj {
   const header = GetHeader(sheet);
 
-  return { header };
+  const disciplines = GetDisciplines(sheet);
+
+  return { header, disciplines };
 }
