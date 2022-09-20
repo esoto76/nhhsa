@@ -18,7 +18,8 @@ function createWindow() {
     webPreferences: {
       contextIsolation: false,
       nodeIntegration: true,
-      preload
+      preload,
+      webSecurity: false
     }
   });
   win.setMenuBarVisibility(false);
