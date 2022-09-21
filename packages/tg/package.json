@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "pinia": "^2.0.22",
+    "update-electron-app": "^2.0.1",
     "vue": "^3.2.39",
     "vue-router": "^4.1.5",
     "xlsx": "https://cdn.sheetjs.com/xlsx-latest/xlsx-latest.tgz"
@@ -28,7 +29,7 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.1",
     "@vue/tsconfig": "^0.1.3",
-    "autoprefixer": "^10.4.11",
+    "autoprefixer": "^10.4.12",
     "electron": "^20.1.4",
     "electron-builder": "^23.3.3",
     "eslint": "^8.23.1",
