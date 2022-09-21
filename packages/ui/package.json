@@ -1,0 +1,30 @@
+{
+  "name": "@nhhsa/ui",
+  "private": true,
+  "version": "0.0.1-alpha.1",
+  "description": "NHHSA UI",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "start": "vite --open"
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vue-tsc": "^0.40.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esoto76/nhhsa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/esoto76/nhhsa/issues"
+  },
+  "homepage": "https://github.com/esoto76/nhhsa/tree/main/packages/ui#readme"
+}
