@@ -2,4 +2,5 @@
 
 <template>
   <h1>NHHSA UI</h1>
+  <RouterView />
 </template>
