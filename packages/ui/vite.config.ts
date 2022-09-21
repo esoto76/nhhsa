@@ -1,11 +1,13 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
 import Pages from 'vite-plugin-pages';
 
 export default defineConfig({
   plugins: [
     vue(),
+    Pages(),
     AutoImport({
       imports: ['vue', 'vue-router', 'vue/macros', 'pinia'],
       dts: './src/auto-imports.d.ts',
@@ -16,6 +18,6 @@ export default defineConfig({
         globalsPropValue: true
       }
     }),
-    Pages()
+    Components({ dts: 'src/components.d.ts' })
   ]
 });
